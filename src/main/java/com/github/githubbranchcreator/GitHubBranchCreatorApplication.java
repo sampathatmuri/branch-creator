@@ -19,7 +19,7 @@ public class GitHubBranchCreatorApplication {
 
 		GitHub github = new GitHubBuilder().withOAuthToken(GITHUB_ACCESS_TOKEN).build();
 
-		String[] repositories = {"sampathatmuri/bookmarks","sampathatmuri/jhipster-microservice"};
+		String[] repositories = {"username/repo1","username/repo2"};
 		for (String repo : repositories) {
 			GHRepository repository = github.getRepository(repo);
 			GHRef masterRef = repository.getRef("heads/master");
