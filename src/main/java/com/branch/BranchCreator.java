@@ -1,25 +1,23 @@
-package com.github.githubbranchcreator;
+package com.branch;
 
-import io.micrometer.observation.Observation;
 import org.kohsuke.github.GHRef;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.IOException;
 
 @SpringBootApplication
-public class GitHubBranchCreatorApplication {
+public class BranchCreator {
 
-	private static final String GITHUB_ACCESS_TOKEN = "your-token";
+	private static final String GITHUB_ACCESS_TOKEN = "replace-with-your-token";
 
 	public static void main(String[] args) throws IOException {
 
 		GitHub github = new GitHubBuilder().withOAuthToken(GITHUB_ACCESS_TOKEN).build();
 
-		String[] repositories = {"sampathatmuri/bookmarks","sampathatmuri/jhipster-microservice"};
+		String[] repositories = {"username/repo1","username/repo2"};
 		for (String repo : repositories) {
 			GHRepository repository = github.getRepository(repo);
 			GHRef masterRef = repository.getRef("heads/master");

@@ -1,10 +1,10 @@
-package com.github.githubbranchcreator;
+package com.branch;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GitHubBranchCreatorApplicationTests {
+class BranchCreatorTests {
 
 	@Test
 	void contextLoads() {
